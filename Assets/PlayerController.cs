@@ -27,12 +27,19 @@ public class PlayerController : MonoBehaviour
         characterController.Move(movement * Time.deltaTime);
 
         animator.SetFloat("Speed", movement.magnitude);
-        
+        /*
         if(movement.magnitude > 0f)
 
         {
             Quaternion tempDirection = Quaternion.LookRotation(movement);
             transform.rotation = Quaternion.Slerp(transform.rotation, tempDirection, Time.deltaTime * playerRotateSpeed);
+
+        }*/
+
+        transform.Rotate(Vector3.up, inputX * playerRotateSpeed * Time.deltaTime);
+        if(inputZ!=0)
+        {
+            characterController.SimpleMove(transform.forward * Time.deltaTime * inputZ);
 
         }
 

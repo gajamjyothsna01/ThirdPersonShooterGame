@@ -12,6 +12,8 @@ public class GunScript : MonoBehaviour
     float damageRate = 1.0f;
     float timer;
     public Transform firePoint;
+    [SerializeField]
+    ParticleSystem particleSystem;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,12 +30,15 @@ public class GunScript : MonoBehaviour
             {
                 timer = 0f;
                 ToFireGun();
+
             }
         }
     }
 
     private void ToFireGun()
     {
+        particleSystem.Play();
+        //To add Audio source.
         Debug.DrawRay(firePoint.position, transform.forward * 100,Color.red,2f);
         Ray ray = new Ray(firePoint.position, transform.forward);
         RaycastHit hitInfo;
