@@ -159,7 +159,7 @@ public class ZombieeController : MonoBehaviour
                     state = STATE.WONDER;
                     return;
                 }
-                TurnOffAllTriggerAnim();
+                //TurnOffAllTriggerAnim();
                 anim.SetBool("isAttacking", true);
                 transform.LookAt(target.transform.position);//Zombies should look at Player
                 if (DistanceToPlayer() > agent.stoppingDistance + 2)
@@ -167,7 +167,7 @@ public class ZombieeController : MonoBehaviour
                     state = STATE.CHASE;
                 }
                 anim.SetBool("isAttacking", true);
-                print("Attack State");
+               // print("Attack State");
                 break;
 
             case STATE.DEAD:

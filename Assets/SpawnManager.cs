@@ -19,7 +19,7 @@ public class SpawnManager : MonoBehaviour
         {
             for (int i = 0; i < zombieePrefabs.Length; i++)
             {
-                Vector3 randomPoint = new Vector3(UnityEngine.Random.Range(8f, 9f), 0f, UnityEngine.Random.Range(-12f,-10f));
+                Vector3 randomPoint = new Vector3(UnityEngine.Random.Range(-11f, -15f), 0f, UnityEngine.Random.Range(-12f,-11f));
                 Instantiate(zombieePrefabs[0], randomPoint, Quaternion.identity);
 
             }

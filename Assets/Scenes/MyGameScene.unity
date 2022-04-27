@@ -535,13 +535,14 @@ GameObject:
   m_Component:
   - component: {fileID: 16746575}
   - component: {fileID: 16746576}
+  - component: {fileID: 16746577}
   m_Layer: 0
   m_Name: SpawnManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &16746575
 Transform:
   m_ObjectHideFlags: 0
@@ -550,7 +551,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 16746574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.58, y: 0, z: -12.73}
+  m_LocalPosition: {x: -15, y: 0.9, z: -14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -563,7 +564,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 16746574}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8809d8580547b5746a80af92916a4eb9, type: 3}
   m_Name: 
@@ -571,6 +572,23 @@ MonoBehaviour:
   zombieePrefabs:
   - {fileID: 8649283111558482988}
   number: 3
+--- !u!114 &16746577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16746574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ac11aa2dfc842f4dbbddf06fcc5427b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pool: []
+  poolItems:
+  - prefab: {fileID: 8649283111558482988}
+    name: Zombiee
+    amount: 1
 --- !u!1 &31070450 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: d80c7433031fdee44bf3910c4b046ce7, type: 3}
@@ -16638,6 +16656,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4152293179356135678, guid: e628852512791ff4c8a45140122e14bf, type: 3}
+      propertyPath: zombieeDieEffect
+      value: 
+      objectReference: {fileID: 8567624383957614534, guid: 081aa0303b642ba42baaae28e66f9e40, type: 3}
     - target: {fileID: 4152293179356135679, guid: e628852512791ff4c8a45140122e14bf, type: 3}
       propertyPath: target
       value: 
@@ -16754,7 +16776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8965915969877324579, guid: 01e3cc05ecf48b6488239da14b2dfa44, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01e3cc05ecf48b6488239da14b2dfa44, type: 3}
