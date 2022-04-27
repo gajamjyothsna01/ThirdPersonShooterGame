@@ -14,6 +14,8 @@ public class GunScript : MonoBehaviour
     public Transform firePoint;
     [SerializeField]
     ParticleSystem particleSystem;
+
+    public AudioSource fireSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,13 +40,21 @@ public class GunScript : MonoBehaviour
     private void ToFireGun()
     {
         particleSystem.Play();
+        fireSource.Play();
         //To add Audio source.
         Debug.DrawRay(firePoint.position, transform.forward * 100,Color.red,2f);
         Ray ray = new Ray(firePoint.position, transform.forward);
         RaycastHit hitInfo;
         if(Physics.Raycast(ray, out hitInfo, 100f))
         {
-          var health =   hitInfo.collider.GetComponent<EnemyScript>();
+            /*GameObject hitZombiee = hitInfo.collider.gameObject;
+            Debug.Log("Got Hot");
+            if(hitZombiee.tag == "Zombiee")
+            {
+                Debug.Log("Found ZOmbiee");
+                hitZombiee.GetComponent<EnemyScript>().Death();
+            }*/
+            var health =   hitInfo.collider.GetComponent<EnemyScript>();
             if(health != null)
             {
                 health.DamageMethod(5);

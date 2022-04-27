@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float playerSpeed;
     Animator animator;
     public  float playerRotateSpeed;
+    public int health;
 
     // Start is called before the first frame update
     void Start()

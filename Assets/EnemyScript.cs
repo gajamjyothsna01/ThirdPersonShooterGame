@@ -29,8 +29,9 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
-    private void Death()
+    public void Death()
     {
+        Debug.Log("Enemy is Dead");
         gameObject.SetActive(false);
     }
 }
